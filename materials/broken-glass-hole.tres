@@ -1,0 +1,31 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b72y3ix6hvh33"]
+
+[ext_resource type="Shader" uid="uid://bqxepby7y3h4y" path="res://shaders/broken-glass-hole.gdshader" id="1_sfmwd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nqpfy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sfmwd"]
+noise = SubResource("FastNoiseLite_nqpfy")
+seamless = true
+as_normal_map = true
+
+[resource]
+shader = ExtResource("1_sfmwd")
+shader_parameter/g_random_seed = 0
+shader_parameter/g_grid_size = Vector2(7, 21)
+shader_parameter/g_color_glass = Color(0.8, 1, 1, 0.6)
+shader_parameter/g_color_cracks = Color(1, 1, 1, 1)
+shader_parameter/g_color_hole = Color(1, 1, 1, 0)
+shader_parameter/g_line_size = 0.015
+shader_parameter/g_hole_limit = -10.0
+shader_parameter/g_hole_limit_fade_mult = 0.1
+shader_parameter/g_fade_start_min = 0.25
+shader_parameter/g_fade_start_max = 0.6
+shader_parameter/g_fade_length_min = 0.1
+shader_parameter/g_fade_length_max = 0.2
+shader_parameter/g_power = 5.0
+shader_parameter/g_radial_zoom = 0.69
+shader_parameter/g_radial_repeat = 1.0
+shader_parameter/g_noise_tex = SubResource("NoiseTexture2D_sfmwd")
+shader_parameter/g_noise_scale = 1.0
+shader_parameter/g_noise_strength = 0.01
